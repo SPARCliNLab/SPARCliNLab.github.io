@@ -1,335 +1,470 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SPARClin Lab</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPARClin Lab</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
-<style>
-body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    background: #f9fafb;
-    color: #0f2c5f; /* stylish dark blue */
-}
-header {
-    background: linear-gradient(135deg, #0f172a, #1e3a8a);
-    color: white;
-    padding: 80px 20px;
-    text-align: center;
-}
-header h1 { font-size: 3rem; margin-bottom: 10px; }
-header p { font-size: 1.2rem; opacity: 0.9; }
-nav {
-    background: white;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 10px;
-}
-nav li { margin: 0 15px; }
-nav a {
-    text-decoration: none;
-    color: #1e3a8a;
-    font-weight: 600;
-}
-section {
-    max-width: 1000px;
-    margin: auto;
-    padding: 60px 20px;
-}
-h2 { font-size: 2rem; margin-bottom: 20px; }
-.card {
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    margin-bottom: 20px;
-}
-#team .card {
-    text-align: left;
-}
-#team .card .avatar-wrapper {
-    width: 140px;
-    height: 140px;
-    border-radius: 12px;
-    background: #efede8d6;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 15px;
-}
-#team .card h3,
-#team .card p {
-    margin: 0.75rem 0;
-}
-/*.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}*/
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
-    gap: 20px;
-}
-footer {
-    background: #0f172a;
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
-.button {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background: #1e3a8a;
-    color: white;
-    border-radius: 8px;
-    text-decoration: none;
-}
-.tag {
-    display: inline-block;
-    padding: 4px 8px;
-    border-radius: 6px;
-    font-size: 0.75rem;
-    margin-right: 6px;
-    font-weight: 500;
-}
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: #f9fafb;
+            color: #0f2c5f;
+            /* stylish dark blue */
+        }
 
-/* Funding (most important) */
-.tag-funding {
-    background: #1e3a8a;
-    color: white;
-}
+        header {
+            background: linear-gradient(135deg, #0f172a, #1e3a8a);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
 
-/* Role (PI / collaboration) */
-.tag-role {
-    background: #e0e7ff;
-    color: #1e3a8a;
-}
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
 
-/* Topic / method */
-.tag-topic {
-    background: #f3f4f6;
-    color: #374151;
-}
-</style>
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        nav {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 10px;
+        }
+
+        a:visited,
+        a:link,
+        a:active,
+        a:hover {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        nav li {
+            margin: 0 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #1e3a8a;
+            font-weight: 600;
+        }
+
+        section {
+            max-width: 1000px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+        }
+
+        #team .card {
+            text-align: left;
+            position: relative;
+        }
+
+        #team .card .avatar-wrapper {
+            width: 140px;
+            height: 140px;
+            border-radius: 12px;
+            background: #efede8d6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        #projects .card:hover,
+        #team .card:hover {
+            background-color: #d9e2ea;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        #team .card h3,
+        #team .card p {
+            margin: 0.75rem 0;
+        }
+
+        .card-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
+            gap: 20px;
+            justify-content: left;
+        }
+
+        .contact-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-visual {
+            flex: 0 0 130px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-text {
+            flex: 1 1 220px;
+            min-width: 220px;
+        }
+
+        footer {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #1e3a8a;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            margin-right: 6px;
+            font-weight: 500;
+        }
+
+        /* Funding (most important) */
+        .tag-funding {
+            background: #1e3a8a;
+            color: white;
+        }
+
+        /* Role (PI / collaboration) */
+        .tag-role {
+            background: #e0e7ff;
+            color: #1e3a8a;
+        }
+
+        /* Topic / method */
+        .tag-topic {
+            background: #f3f4f6;
+            color: #374151;
+        }
+
+        /* clickable card link */
+        .card-link {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 
 <body>
 
-<header>
-    <h1>SPARCliN Lab</h1>
-    <p>Signal Processing & AI Research for Clinical Neuroscience</p>
-</header>
+    <header>
+        <h1>SPARCliN Lab</h1>
+        <p>Signal Processing & AI Research for Clinical Neuroscience</p>
+    </header>
 
-<nav>
-    <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#research">Research</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#team">Team</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-</nav>
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-<section id="about">
-    <h2>About</h2>
-    <div class="card">
-        <p>
-            The SPARCliN Lab develops advanced signal processing and AI methods for clinical neuroscience. 
-            We focus on extracting meaningful patterns from complex brain data to improve diagnosis and treatment.
-        </p>
-        <p>
-            Based at Maastricht University, Department of Neurosurgery and MHeNs, and in close collaboration with TU Delft, Signal Processing Systems Group, we bridge engineering, 
-            neuroscience, and clinical practice.
-        </p>
-    </div>
-</section>
-
-<section id="research">
-    <h2>Research</h2>
-    <div class="grid">
+    <section id="about">
+        <h2>About</h2>
         <div class="card">
-            <h3>AI in Neuroimaging</h3>
-                           <div style="text-align:center;">
-            <img src="brain.png" alt="brain as neural network" 
-                style="width:140px; height:140px; object-fit:cover; border-radius:12px; margin-bottom:15px;">
-            </div>
-            <p>Machine learning and signal processing for EEG, fMRI, and functional ultrasound data.</p>
-        </div>
-        <div class="card">
-            <h3>Epilepsy & Biomarkers</h3>
-              <div style="text-align:center;">
-            <img src="neuroimage.jpg" alt="MRI scan with ROIs" 
-                style="width:140px; height:140px; object-fit:cover; border-radius:12px; margin-bottom:15px;">
-            </div>
-            <p>Identifying data-driven imaging biomarkers for neurological disorders with a special focus on epilepsy.</p>
-        </div>
-        <div class="card">
-            <h3>Tensor Methods</h3>
-             <div style="text-align:center;">
-            <img src="tensor.jpg" alt="sparse multiway data" 
-                style="width:140px; height:140px; object-fit:cover; border-radius:12px; margin-bottom:15px;">
-            </div>
-            <p> Advanced modelling of multi-dimensional data: decompositions, blind source separation and data fusion.</p>
-        </div>
-        <div class="card">
-            <h3>Clinical Translation</h3>
-              <div style="text-align:center;">
-            <img src="clinical.jpg" alt="sparse multiway data" 
-                style="width:140px; height:140px; object-fit:cover; border-radius:12px; margin-bottom:15px;">
-            </div>
-            <p>Our ambition is to bring AI tools into real-world clinical workflows.</p>
-        </div>
-    </div>
-</section>
-
-<section id="projects">
-    <h2>Projects</h2>
-    <div class="grid">
-
-        <div class="card">
-            <h3>NWO Vidi NeuroMark</h3>
-            <p><strong>Tensor-based network biomarker discovery</strong></p>
             <p>
-                This project develops advanced tensor-based machine learning methods to identify
-                network-level biomarkers in brain data, enabling improved diagnosis and treatment planning
-                in neurological disorders.
+                The SPARCliN Lab develops advanced signal processing and AI methods for clinical neuroscience.
+                We focus on extracting meaningful patterns from complex brain data to improve diagnosis and treatment.
             </p>
-            <!--
+            <p>
+                Based at Maastricht University, Department of Neurosurgery and MHeNs, and in close collaboration with TU
+                Delft, Signal Processing Systems Group, we bridge engineering,
+                neuroscience, and clinical practice.
+            </p>
+        </div>
+    </section>
+
+    <section id="research">
+        <h2>Research</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>AI in Neuroimaging</h3>
+                <div style="text-align:center;">
+                    <img src="brain.png" alt="brain as neural network"
+                        style="width:140px; height:140px; object-fit:cover; border-radius:12px; margin-bottom:15px;">
+                </div>
+                <p>Machine learning and signal processing for EEG, fMRI, and functional ultrasound data.</p>
+            </div>
+            <div class="card">
+                <h3>Epilepsy & Biomarkers</h3>
+                <div style="text-align:center;">
+                    <img src="neuroimage.jpg" alt="MRI scan with ROIs"
+                        style="width:140px; height:140px; object-fit:cover; border-radius:12px; margin-bottom:15px;">
+                </div>
+                <p>Identifying data-driven imaging biomarkers for neurological disorders with a special focus on
+                    epilepsy.</p>
+            </div>
+            <div class="card">
+                <h3>Tensor Methods</h3>
+                <div style="text-align:center;">
+                    <img src="tensor.jpg" alt="sparse multiway data"
+                        style="width:140px; height:140px; object-fit:cover; border-radius:12px; margin-bottom:15px;">
+                </div>
+                <p> Advanced modelling of multi-dimensional data: decompositions, blind source separation and data
+                    fusion.</p>
+            </div>
+            <div class="card">
+                <h4>Clinical Translation</h4>
+                <div style="text-align:center;">
+                    <img src="clinical.jpg" alt="sparse multiway data"
+                        style="width:140px; height:140px; object-fit:cover; border-radius:12px; margin-bottom:15px;">
+                </div>
+                <p>Our ambition is to bring AI tools into real-world clinical workflows.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="grid">
+
+            <div class="card">
+                <a href="https://www.nwo.nl/projecten/akkzp29725" class='card-link'></a>
+                <h3>NWO Vidi NeuroMark</h3>
+                <p><strong>Tensor-based network biomarker discovery</strong></p>
+                <p>
+                    This project develops advanced tensor-based machine learning methods to identify
+                    network-level biomarkers in brain data, enabling improved diagnosis and treatment planning
+                    in neurological disorders.
+                </p>
+                <!--
             <p>
                 <span class="tag">NWO</span>
                 <span class="tag">Vidi</span>
                 <span class="tag">PI</span>
             </p>
         -->
-            <p>
-                <a href="https://www.nwo.nl/projecten/akkzp29725" target="_blank">Read more →</a>
-            </p>
-        </div>
 
-        <div class="card">
-            <h3>DeTAIL</h3>
-            <p><strong>Training and Innovation in tensor-based AI methods for biomedical signals</strong></p>
-            <p>
-                A research and training initiative focused on developing next-generation tensor-based AI
-                methods for analysing complex biomedical signals and neuroimaging data.
-            </p>
-            <!--
+            </div>
+
+            <div class="card">
+                <a href="https://detail-project.eu/" class='card-link'></a>
+                <h3>DeTAIL</h3>
+                <p><strong>Training and Innovation in tensor-based AI methods for biomedical signals</strong></p>
+                <p>
+                    A research and training initiative focused on developing next-generation tensor-based AI
+                    methods for analysing complex biomedical signals and neuroimaging data.
+                </p>
+                <!--
             <p>
                 <span class="tag tag-role">TU Delft</span>
                 <span class="tag tag-role">Collaboration</span>
                 <span class="tag tag-topic">Tensor AI</span>
             </p>
         -->
-            <p>
-                <a href="https://www.tudelft.nl/en/ai/detail/" target="_blank">Read more →</a>
-            </p>
-        </div>
+            </div>
 
-        <div class="card">
-            <h3>CONTACT Study</h3>
-            <p><strong>
-                Effects of radio frequency thermoCOagulation on the brain NeTwork ACTivity in epilepsy patients
-            </strong></p>
-            <p>
-                Investigating how radiofrequency thermocoagulation impacts brain network activity in epilepsy
-                patients using advanced fMRI and invasive EEG recordings.
-            </p>
+            <div class="card">
+                <a href="https://epilepsieliga.nl/contact-study/" class='card-link'></a>
+                <h3>CONTACT Study</h3>
+                <p><strong>
+                        Effects of radio frequency thermoCOagulation on the brain NeTwork ACTivity in epilepsy patients
+                    </strong></p>
+                <p>
+                    Investigating how radiofrequency thermocoagulation impacts brain network activity in epilepsy
+                    patients using advanced fMRI and invasive EEG recordings.
+                </p>
 
-            <!--
+                <!--
             <p>
                 <span class="tag">Clinical</span>
                 <span class="tag">Epilepsy</span>
                 <span class="tag">Maastricht UMC+</span>
             </p>
         -->
-            <p>
-                <a href="https://epilepsieliga.nl/contact-study/" target="_blank">Read more →</a>
-            </p>
-        </div>
-
-    </div>
-</section>
-<section id="team">
-    <h2>Team</h2>
-    <h3>Core Team</h3>
-    <div class="grid">
-        <div class="card">
-            <div class="avatar-wrapper">
-                <img src="bhunyadi.jpg" alt="Dr Borbála Hunyadi"
-                    style="max-width:100%; max-height:100%; border-radius:12px;">
             </div>
-            <h4>Dr Borbála Hunyadi</h4>
-            <p>Principal Investigator</p>
-            <p>Associate professor, expert in signal processing for brain disorders.</p>
+
         </div>
-        <div class="card">
-            <div class="avatar-wrapper">
-                <img src="Isi.jpg" alt="Dr Isabell Lehmann"
-                    style="width:140px; height:140px; object-fit:cover; border-radius:12px;">
+    </section>
+
+    <section id="publications">
+        <h2>Publications</h2>
+        <p><strong>Selected publications highlighting our key research contributions:</strong></p>
+        <div class="grid">
+            <div class="card">
+                <h4>Brain Connectivity: From network science to tensor models</h4>
+                <p><strong>Authors:</strong> B. Hunyadi, S. Aviyente</p>
+                <p><strong>Journal:</strong> IEEE Signal Processing Magazine</p>
+                <p><strong>Year:</strong> 2025</p>
+                <p>Networks are the hallmark of brain function and their temporal evolution is a key aspect. In this tutorial we deep-dive into two complementary techniques - based on network science and tensor decompositions - to model temporal networks. </p>
+                <p>
+                    <a href="https://doi-org.tudelft.idm.oclc.org/10.1109/MSP.2025.3600011" target="_blank">Read more →</a>
+                </p>
             </div>
-            <h4>Dr Isabell Lehmann</h4>
-            <p>Senior Researcher</p>
-            <p>Postdoctoral fellow developing data fusion methods for neuroimaging.</p>
-        </div>
-        <div class="card">
-            <div class="avatar-wrapper">
-                <img src="Helena.jpg" alt="Helena Puente Díaz"
-                    style="width:140px; height:140px; object-fit:cover; border-radius:12px;">
+            <div class="card">
+                <h4>A Comprehensive Guide to Multiset Canonical Correlation Analysis and Its Application to Joint Blind
+                    Source Separation</h4>
+                <p><strong>Authors:</strong> I. Lehmann, B. Gabrielson, T. Hasija, T. Adali</p>
+                <p><strong>Journal:</strong> IEEE Transactions on Signal Processing</p>
+                <p><strong>Year:</strong> 2025</p>
+                <p>Multiset Canonical Correlation Analysis (mCCA) identifies correlated variables across
+                    multiple datasets and can be a powerful tool in neuroscience.</p>
+                <p>
+                    <a href="https://doi-org.tudelft.idm.oclc.org/10.1109/TSP.2025.3623874" target="_blank">Read more →</a>
+                </p>
             </div>
-            <h4>Helena Puente Díaz</h4>
-            <p>PhD candidate</p>
-            <p>Neuroengineer specializing in physiological signal processing.</p>
+            <div class="card">
+                <h4>The impact of radiofrequency thermocoagulation on brain connectivity in drug‐resistant epilepsy:
+                    Insights from stereo‐electroencephalography and cortico‐cortical evoked potentials</h4>
+                <p><strong>Authors:</strong> J. Gula, R.J.Slegers, R. Van Hoof, B. Krishnan et al </p>
+                <p><strong>Journal:</strong> Epilepsia</p>
+                <p><strong>Year:</strong> 2025</p>
+                <p>Will local lesions created by radiofrequency thermocoagulation in epilepsy patients affect distant brain connectivity and
+                    excitability?</p>
+                <p>
+                    <a href="https://doi-org.tudelft.idm.oclc.org/10.1111/epi.18270" target="_blank">Read more →</a>
+                </p>
+            </div>
         </div>
-    </div>
-     <h3>Affiliated Researchers</h3>
-    <div class="grid">
+        <p style="text-align:left; margin-top:30px;">
+            <a href="https://scholar.google.com/citations?user=example" target="_blank"
+                style=" font-weight:600; text-decoration:none;">View all publications on Google Scholar
+                →</a>
+        </p>
+    </section>
 
+    <section id="team">
+        <h2>Team</h2>
+        <h3>Core Team</h3>
+        <div class="grid">
+            <div class="card">
+                <a href="bhunyadi.html" class='card-link'></a>
+                <div class="avatar-wrapper">
+                    <img src="bhunyadi.jpg" alt="Dr Borbála Hunyadi"
+                        style="max-width:100%; max-height:100%; border-radius:12px;">
+                </div>
+                <h4>Dr Borbála Hunyadi</h4>
+                <p>Principal Investigator</p>
+                <p>Associate professor, expert in signal processing for brain disorders.</p>
+            </div>
+            <div class="card">
+                <a href="isi.html" class='card-link'></a>
+                <div class="avatar-wrapper">
+                    <img src="isi.jpg" alt="Dr Isabell Lehmann"
+                        style="width:140px; height:140px; object-fit:cover; border-radius:12px;">
+                </div>
+                <h4>Dr Isabell Lehmann</h4>
+                <p>Senior Researcher</p>
+                <p>Postdoctoral fellow developing data fusion methods for neuroimaging.</p>
+            </div>
+            <div class="card">
+                <a href="helena.html" class='card-link'></a>
+                <div class="avatar-wrapper">
+                    <img src="helena.jpg" alt="Helena Puente Díaz"
+                        style="width:140px; height:140px; object-fit:cover; border-radius:12px;">
+                </div>
+                <h4>Helena Puente Díaz</h4>
+                <p>PhD candidate</p>
+                <p>Neuroengineer specializing in physiological signal processing.</p>
+            </div>
+        </div>
+        <h3>Affiliated Researchers</h3>
+        <div class="grid">
+
+            <div class="card">
+                <h4>Justyna Gula</h4>
+                <p>PhD candidate</p>
+                <p>Maastricht University, Department of Radiology</p>
+            </div>
+
+            <div class="card">
+                <h4>Sofia-Eirini Kotti</h4>
+                <p>PhD candidate</p>
+                <p>TU Delft, Signal Processing Systems Group</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
         <div class="card">
-            <h4>Justyna Gula</h4>
-            <p>PhD Candidate (co-supervised)</p>
-            <p>Maastricht University, Department of Radiology</p>
+            <div class="contact-row">
+                <div class="contact-visual">
+                    <!-- Inline envelope icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="#1e3a8a" viewBox="0 0 24 24" width="100" height="100">
+                        <path d="M0 0h24v24H0z" fill="none" />
+                        <path
+                            d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.89 2 1.99 2H20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                    </svg>
+                </div>
+                <div class="contact-text">
+                    <p>SPARCliN Lab<br>Maastricht University<br>Department of Neurosurgery<br>Faculty of Health, Medicine and
+                        Life Sciences<br> <a
+                            href="https://www.maastrichtuniversity.nl/research/mental-health-and-neuroscience-research-institute"
+                            target="_blank">Mental Health and Neuroscience Research Institute (MHeNs)</a></p>
+                    <p>Email: <span id="email">borbala.hunyadi [at] maastrichtuniversity [dot] nl</span></p>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="card">
-            <h4>Sofia-Eirini Kotti</h4>
-            <p>PhD Candidate</p>
-            <p>TU Delft, Signal Processing Systems Group</p>
-        </div>
-
-    </div>
-</section>
-
-<section id="contact">
-    <h2>Contact</h2>
-    <div class="card">
-        <p>SPARCliN Lab<br>Maastricht University<br>Department of Neurosurgery<br>Faculty of Health, Medicine and Life Sciences<br> <a href="https://www.maastrichtuniversity.nl/research/mental-health-and-neuroscience-research-institute" target="_blank">Mental Health and Neuroscience Research Institute (MHeNs)</a></p>
-        <p>Email: <span id="email">borbala.hunyadi [at] maastrichtuniversity [dot] nl</span></p>
-        <div class="contact-visual">
-            <!-- Inline envelope icon -->
-            <svg xmlns="http://www.w3.org/2000/svg" fill="#1e3a8a" viewBox="0 0 24 24" width="100" height="100">
-                <path d="M0 0h24v24H0z" fill="none"/>
-                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.89 2 1.99 2H20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-            </svg>
-        </div>
-    </div>
-</section>
-
-<footer>
-    <p>© 2026 SPARCliN Lab | Maastricht University</p>
-</footer>
+    <footer>
+        <p>© 2026 SPARCliN Lab | Maastricht University</p>
+    </footer>
 
 </body>
+
 </html>

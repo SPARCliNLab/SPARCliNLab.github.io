@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr Isabell Lehmann - SPARClin Lab</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #f9fafb;
+    color: #0f2c5f;
+}
+header {
+    background: linear-gradient(135deg, #0f172a, #1e3a8a);
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+}
+header h1 { font-size: 3rem; margin-bottom: 10px; }
+header p { font-size: 1.2rem; opacity: 0.9; }
+nav {
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 10px;
+}
+nav li { margin: 0 15px; }
+nav a {
+    text-decoration: none;
+    color: #1e3a8a;
+    font-weight: 600;
+}
+section {
+    max-width: 1000px;
+    margin: auto;
+    padding: 60px 20px;
+}
+h2 { font-size: 2rem; margin-bottom: 20px; }
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+.avatar-wrapper {
+    width: 200px;
+    height: 200px;
+    border-radius: 12px;
+    background: #efede8d6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+footer {
+    background: #0f172a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+.social-links {
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icon {
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    border-radius: 8px;
+    background: #e0e7ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background: #1e3a8a;
+    transform: translateY(-3px);
+}
+
+.social-icon svg {
+    width: 24px;
+    height: 24px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>SPARClin Lab</h1>
+    <p>Signal Processing & AI Research for Clinical Neuroscience</p>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#research">Research</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#team">Team</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<section>
+    <div class="card">
+        <div class="avatar-wrapper">
+            <img src="isi.jpg" alt="Dr Isabell Lehmann"
+                style="width:200px; height:200px; object-fit:cover; border-radius:12px;">
+        </div>
+        <h2>Dr Isabell Lehmann</h2>
+        <p><strong>Senior Researcher</strong></p>
+        <p>
+            Bio:
+        </p>
+        <p>
+            Coming soon...
+        </p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/isabell-lehmann-b1925a239/" target="_blank" class="social-icon" title="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="#1e3a8a">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.475-2.236-1.986-2.236-1.081 0-1.722.722-2.004 1.418-.103.249-.129.597-.129.946v5.441h-3.554s.047-8.833 0-9.749h3.554v1.381c.43-.664 1.199-1.608 2.928-1.608 2.136 0 3.745 1.394 3.745 4.393v5.583zM5.337 9.433c-1.144 0-1.893-.758-1.893-1.707 0-.955.749-1.708 1.933-1.708 1.185 0 1.893.754 1.909 1.708 0 .949-.724 1.707-1.909 1.707zm1.586 11.019H3.73V9.703h3.193v10.749zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0h.001z"/>
+                </svg>
+            </a>
+            <a href="https://scholar.google.com/citations?user=example" target="_blank" class="social-icon" title="Google Scholar">
+                <img src="logos/scholar.png" alt="Google Scholar" style="width:24px; height:24px;">
+            </a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 SPARCliN Lab | Maastricht University</p>
+</footer>
+
+</body>
+</html>
