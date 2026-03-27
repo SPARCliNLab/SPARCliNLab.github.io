@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr Borbála Hunyadi - SPARClin Lab</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: #f9fafb;
+            color: #0f2c5f;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0f172a, #1e3a8a);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        nav {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 10px;
+        }
+
+        nav li {
+            margin: 0 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #1e3a8a;
+            font-weight: 600;
+        }
+
+        section {
+            max-width: 1000px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+        }
+
+        .avatar-wrapper {
+            width: 200px;
+            height: 200px;
+            border-radius: 12px;
+            background: #efede8d6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        footer {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .social-links {
+            text-align: center;
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-icon {
+            display: inline-block;
+            width: 45px;
+            height: 45px;
+            background: #e0e7ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background: #1e3a8a;
+            transform: translateY(-3px);
+        }
+
+        .social-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>SPARClin Lab</h1>
+        <p>Signal Processing & AI Research for Clinical Neuroscience</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#research">Research</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="index.html#team">Team</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <div class="card">
+            <div class="avatar-wrapper">
+                <img src="bhunyadi.jpg" alt="Dr Borbála Hunyadi"
+                    style="max-width:100%; max-height:100%; border-radius:12px;">
+            </div>
+            <h2>Dr Borbála Hunyadi</h2>
+            <p><strong>Associate Professor</strong></p>
+            <p>Bio:</p>
+            <p>
+                Borbála Hunyadi is an Associate Professor at Maastricht University, and a guest Associate Professor at
+                TU Delft. She was born in Budapest, Hungary. She received a MSc degree in electronic and computer
+                engineering from the Pázmány Peter Catholic University and a PhD in electrical engineering from the
+                Department of Electrical Engineering at KU Leuven, where she continued to work as a postdoctoral
+                researcher. In 2018 she was awarded one of the “Delft Technology Fellowships” for outstanding female
+                academic researchers and joined the Signal Processing Systems Group at TU Delft, where she co-founded the
+                Delft Tensor AI Lab (DeTAIL). In 2025 she moved to Maastricht University, Department of Neurosurgery
+                with the ambition to bridge the gap between biomedical signal processing research and clinical practice.
+                She is chair of the EURASIP Technical Area Committee on Biomedical Image and Signal Analysis and
+                associate editor for the IEEE Signal Processing Magazine (Columns and Forum) and Frontiers in
+                Neuroscience (Brain Imaging Methods).
+            </p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/borbala-hunyadi/" target="_blank" class="social-icon" title="LinkedIn">
+                                      <img src="logos/linkedin.png" alt="LinkedIn" style="width:40px; height:40px;">
+                </a>
+                <a href="https://scholar.google.com/citations?user=example" target="_blank" class="social-icon" title="Google Scholar">
+                    <img src="logos/scholar.png" alt="Google Scholar" style="width:40px; height:40px;">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 SPARCliN Lab | Maastricht University</p>
+    </footer>
+
+</body>
+
+</html>
