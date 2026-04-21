@@ -1,0 +1,4 @@
+/\/\* clickable card link \*\// {
+    N
+    s/\/\* clickable card link \*\/\n        \.card-link {\n            position: absolute;\n            top: 0;\n            bottom: 0;\n            left: 0;\n            width: 100%;\n        }//* clickable card link *\/\n        .card-link {\n            position: absolute;\n            top: 0;\n            bottom: 0;\n            left: 0;\n            width: 100%;\n            cursor: pointer;\n            font-size: 1.5rem;\n            display: flex;\n            align-items: flex-start;\n            justify-content: flex-end;\n            padding: 10px;\n            color: #1e3a8a;\n            opacity: 1;\n            transition: opacity 0.2s ease;\n        }\n\n        .card:hover .card-link {\n            opacity: 1;\n        }\n\n        #publications a {\n            text-decoration: underline;\n            color: #1e3a8a;\n        }\n\n        #publications a:hover {\n            color: #4f46e5;\n        }/
+}

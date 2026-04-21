@@ -1,0 +1,9 @@
+
+        #publications a {
+            text-decoration: underline;
+            color: #1e3a8a;
+        }
+
+        #publications a:hover {
+            color: #4f46e5;
+        }
