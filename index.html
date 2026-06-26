@@ -5,19 +5,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="d4XSAv4wF05D6b8xFRwYxr_JI81DUhMdy3y4ZR6GIHc" />
-    <meta name="description" content="SPARClin Lab is a research laboratory at Maastricht University focused on advanced  signal processing in functional neuroimaging and its translation to clinical practice.">
+    <meta name="description" content="SPARClin Lab is a research laboratory at Maastricht University focused on advanced signal processing in functional neuroimaging and its translation to clinical practice.">
+    <meta name="robots" content="index,follow">
     <meta property="og:site_name" content="SPARCLIN Lab">
+    <meta property="og:title" content="SPARCLIN Lab | Signal Processing and AI for Clinical Neuroscience">
+    <meta property="og:description" content="SPARClin Lab develops advanced signal processing and AI methods for clinical neuroscience at Maastricht University.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sparclinlab.github.io/">
+    <meta property="og:image" content="https://sparclinlab.github.io/logos/Sparclin_whiteTeal.png">
+    <meta property="og:image:alt" content="SPARCLIN Lab logo">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SPARCLIN Lab | Signal Processing and AI for Clinical Neuroscience">
+    <meta name="twitter:description" content="SPARClin Lab develops advanced signal processing and AI methods for clinical neuroscience at Maastricht University.">
+    <meta name="twitter:image" content="https://sparclinlab.github.io/logos/Sparclin_whiteTeal.png">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "SPARCLIN Lab",
-        "url": "https://sparclinlab.github.io/"
+        "@graph": [
+            {
+                "@type": "WebSite",
+                "name": "SPARCLIN Lab",
+                "url": "https://sparclinlab.github.io/"
+            },
+            {
+                "@type": "Organization",
+                "name": "SPARCLIN Lab",
+                "url": "https://sparclinlab.github.io/",
+                "logo": "https://sparclinlab.github.io/logos/Sparclin_whiteTeal.png"
+            }
+        ]
     }
     </script>
 
     <title>SPARClin Lab | Signal Processing and AI for Clinical Neuroscience</title>
 
+    <link rel="canonical" href="https://sparclinlab.github.io/">
+    <link rel="icon" href="logos/Sparclin_whiteTeal.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
@@ -36,14 +59,24 @@
             text-align: center;
         }
 
-        header h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
+        .hero-logo {
+            width: min(320px, 70vw);
+            height: auto;
+            margin: 0 auto 16px;
+            display: block;
+            filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.2));
         }
 
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
+        .hero-text {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
         }
 
         nav {
@@ -81,9 +114,46 @@
         }
 
         section {
-            max-width: 1000px;
-            margin: auto;
+            width: 100%;
+            box-sizing: border-box;
+            margin: 0;
             padding: 60px 20px;
+        }
+
+        section > * {
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        main > section:nth-of-type(odd) {
+            background: #f9fafb;
+        }
+
+        main > section:nth-of-type(even) {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+            color: #f8fafc;
+        }
+
+        main > section:nth-of-type(even) a {
+            color: #dbeafe;
+        }
+
+        main > section:nth-of-type(even) .card {
+            color: #0f2c5f;
+        }
+
+        #publications .publication-link,
+        #publications .publication-link:link,
+        #publications .publication-link:visited {
+            color: white !important;
+            text-decoration: none;
+        }
+
+        #publications .publication-link:hover,
+        #publications .publication-link:active {
+            color: #9fb3ff !important;
+            transition: color 0.2s ease;
         }
 
         h2 {
@@ -105,7 +175,6 @@
             text-align: left;
             position: relative;
             cursor: pointer;
-            border: 2px solid transparent;
         }
 
         #team .card .avatar-wrapper {
@@ -122,7 +191,6 @@
 
         #projects .card {
             cursor: pointer;
-            border: 2px solid transparent;
         }
 
         #projects .card:hover,
@@ -304,8 +372,11 @@
 <body>
 
     <header>
-        <h1>SPARCliN Lab</h1>
-        <p>Signal Processing & AI Research for Clinical Neuroscience</p>
+        <img src="logos/Sparclin_whiteTeal.png" alt="SPARClin Lab logo" class="hero-logo">
+        <div class="hero-text">
+            <h1>SPARCliN Lab</h1>
+            <p>Signal Processing & AI Research for Clinical Neuroscience</p>
+        </div>
     </header>
 
     <nav>
@@ -364,7 +435,7 @@
                         fusion.</p>
                 </div>
                 <div class="card">
-                    <h4>Clinical Translation</h4>
+                    <h3>Clinical Translation</h3>
                     <div style="text-align:center;">
                         <img src="clinical.jpg" alt="sparse multiway data"
                             style="width:140px; height:140px; object-fit:cover; border-radius:12px; margin-bottom:15px;">
@@ -478,7 +549,7 @@
             </div>
             <p style="text-align:left; margin-top:30px;">
                 <a href="https://scholar.google.com/citations?user=example" target="_blank"
-                    style=" font-weight:600; text-decoration:none;">View all publications on Google Scholar
+                    class="publication-link" style="font-weight:600; text-decoration:none; color:white;">View all publications on Google Scholar
                     →</a>
             </p>
         </section>
@@ -554,7 +625,9 @@
                         <p>SPARCliN Lab<br>Maastricht University<br>Department of Neurosurgery<br>Faculty of Health, Medicine and
                             Life Sciences<br> <a
                                 href="https://www.maastrichtuniversity.nl/research/mental-health-and-neuroscience-research-institute"
-                                target="_blank">Mental Health and Neuroscience Research Institute (MHeNs)</a></p>
+                                target="_blank" style="color:#1e3a8a; text-decoration:underline; transition:color 0.2s ease;"
+                                onmouseover="this.style.color='#909fd7'"
+                                onmouseout="this.style.color='#1e3a8a'">Mental Health and Neuroscience Research Institute (MHeNs)</a></p>
                         <p>Email: <span id="email">borbala.hunyadi [at] maastrichtuniversity [dot] nl</span></p>
                     </div>
                 </div>
