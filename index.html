@@ -329,6 +329,47 @@
             color: #4f46e5;
         }
 
+        #news .news-archive-link,
+        #news .news-archive-link:visited {
+            color: #f8fafc;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        #news .news-archive-link:hover,
+        #news .news-archive-link:active {
+            color: #9fb3ff;
+        }
+
+        .news-item-layout {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .news-item-image {
+            width: 180px;
+            height: auto;
+            flex: 0 0 180px;
+            border-radius: 8px;
+        }
+
+        .news-item-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        @media (max-width: 600px) {
+            .news-item-layout {
+                flex-direction: column;
+            }
+
+            .news-item-image {
+                width: 140px;
+                flex-basis: auto;
+            }
+        }
+
         @media (max-width: 768px) {
             nav ul {
                 flex-wrap: wrap;
@@ -560,7 +601,7 @@
             </div>
             <p style="text-align:left; margin-top:30px;">
                 <a href="https://scholar.google.com/citations?user=example" target="_blank"
-                    class="publication-link" style="font-weight:600; text-decoration:none; color:white;">View all publications on Google Scholar
+                    class="publication-link" style="font-weight:600; text-decoration:none; color:#f8fafc;">View all publications on Google Scholar
                     →</a>
             </p>
         </section>
@@ -624,6 +665,17 @@
         <section id="news">
             <h2>News</h2>
             <div class="card">
+                <p><strong>4 September 2026</strong></p>
+                <div class="news-item-layout">
+                    <img class="news-item-image" src="pictures/eusipco2026.jpeg" alt="Students presenting their work at EUSIPCO 2026 in Bruges">
+                    <div class="news-item-content">
+                        <h3>Our research at EUSIPCO 2026</h3>
+                        <p>Four students supervised or co-supervised by Bori presented their work at EUSIPCO 2026 in Bruges, covering temporal brain networks, tensor-based Hidden Markov Models, and functional ultrasound imaging.</p>
+                        <p><a href="https://www.linkedin.com/feed/update/urn:li:activity:7502678309844217857/" target="_blank" rel="noopener">Read more on LinkedIn →</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
                 <p><strong>14 July 2026</strong></p>
                 <h3>Plenary speech at IEEE SAM</h3>
                 <p>Bori gave a plenary speech at the <a href=" https://attend.ieee.org/sam-2026/" target="_blank" rel="noopener">IEEE Sensor Array and Multichannel Signal Processing (SAM) Workshop</a>. </p>
@@ -635,12 +687,7 @@
                 <p>Bori gave a seminar as part of the STADIUS colloquia series at KU Leuven.</p>
                 <p><a href="https://www.esat.kuleuven.be/stadius/?p=3109" target="_blank" rel="noopener">View the event details →</a></p>
             </div>
-            <div class="card">
-                <p><strong>12 February 2026</strong></p>
-                <h3>EEG BCI demonstration for secondary school students</h3>
-                <p>We gave an EEG brain-computer interface (BCI) demonstration to secondary school students together with Sophia Gimple from the <a href="https://neuralinterfacinglab.github.io" target="_blank" rel="noopener">Neural Interfacing Lab</a>.</p>
-                <p><a href="https://www.linkedin.com/posts/borbala-hunyadi_sciencecommunication-bci-stem-activity-7432436623599894528-BYNi?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAS0eHEBCund6_LTN81eU09oG6nuCnuHggI" target="_blank" rel="noopener">View the LinkedIn post →</a></p>
-            </div>
+            <p><a class="news-archive-link" href="news.html">View the news archive →</a></p>
         </section>
 
         <section id="contact">
