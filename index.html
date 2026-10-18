@@ -164,11 +164,25 @@
         .card {
             background: white;
             padding: 20px;
+            box-sizing: border-box;
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
             margin-bottom: 20px;
             position: relative;
             transition: all 0.3s ease;
+        }
+
+        #about .card,
+        #research .grid,
+        #news .card {
+            width: 100%;
+            max-width: 940px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #about .card {
+            display: block;
         }
 
         #team .card {
@@ -221,6 +235,20 @@
             margin: 0.75rem 0;
         }
 
+        #research .card h3 {
+            margin-bottom: 8px;
+        }
+
+        #research .card p {
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+
+        #research .card img {
+            display: block;
+            margin: 0 auto 8px;
+        }
+
         .card-link {
             text-decoration: none;
             color: inherit;
@@ -232,6 +260,10 @@
             grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
             gap: 20px;
             justify-content: left;
+        }
+
+        #research .grid {
+            grid-template-columns: repeat(2, minmax(250px, 1fr));
         }
 
         .contact-row {
@@ -446,8 +478,8 @@
             <h2>About</h2>
             <div class="card">
                 <p>
-                    The SPARCliN Lab develops advanced signal processing and AI methods for clinical neuroscience.
-                    We focus on extracting meaningful patterns from complex brain data to improve diagnosis and treatment.
+                    The SPARClin Lab develops advanced signal processing and AI methods to extract meaningful information from complex brain data. 
+                    Our research focuses on understanding brain networks and their dynamics, with the goal of identifying clinically relevant biomarkers and predicting responses to interventions.
                 </p>
                 <p>
                     Based at Maastricht University, Department of Neurosurgery and MHeNs, and in close collaboration with TU
@@ -461,38 +493,36 @@
             <h2>Research</h2>
             <div class="grid">
                 <div class="card">
-                    <h3>AI in Neuroimaging</h3>
+                    <h3>Methods for Complex Brain Data</h3>
                     <div style="text-align:center;">
-                        <img src="brain.png" alt="brain as neural network"
-                            style="width:140px; height:140px; object-fit:cover; border-radius:12px; margin-bottom:15px;">
+                        <img src="pictures/tensormethods.png" alt="brain as neural network"
+                            style="width:240px; max-width:100%; height:150px; object-fit:contain; background:#ffffff; border-radius:12px; margin-bottom:8px;">
                     </div>
-                    <p>Machine learning and signal processing for EEG, fMRI, and functional ultrasound data.</p>
+                    <p>Complex, high-dimensional brain data call for innovative analytical approaches. We develop advanced signal processing and AI methods, including blind source separation, tensor decompositions, and multimodal data integration, to uncover meaningful patterns in brain activity.</p>
                 </div>
                 <div class="card">
-                    <h3>Epilepsy & Biomarkers</h3>
+                    <h3>Brain Network Biomarkers</h3>
                     <div style="text-align:center;">
-                        <img src="neuroimage.jpg" alt="MRI scan with ROIs"
-                            style="width:140px; height:140px; object-fit:cover; border-radius:12px; margin-bottom:15px;">
+                        <img src="pictures/networkbiomarkers.png" alt="MRI scan with ROIs"
+                            style="width:240px; max-width:100%; height:150px; object-fit:contain; background:#ffffff; border-radius:12px; margin-bottom:8px;">
                     </div>
-                    <p>Identifying data-driven imaging biomarkers for neurological disorders with a special focus on
-                        epilepsy.</p>
+                    <p>Brain connectivity provides insights into brain function, development, and neurological disorders. We investigate how network analysis and computational modelling can reveal clinically relevant biomarkers.</p>
                 </div>
                 <div class="card">
-                    <h3>Tensor Methods</h3>
+                    <h3>Dynamic Brain Networks</h3>
                     <div style="text-align:center;">
-                        <img src="tensor.jpg" alt="sparse multiway data"
-                            style="width:140px; height:140px; object-fit:cover; border-radius:12px; margin-bottom:15px;">
+                        <img src="pictures/dynamicnetworks.png" alt="sparse multiway data"
+                            style="width:240px; max-width:100%; height:150px; object-fit:contain; background:#ffffff; border-radius:12px; margin-bottom:8px;">
                     </div>
-                    <p> Advanced modelling of multi-dimensional data: decompositions, blind source separation and data
-                        fusion.</p>
+                    <p> Brain networks continuously reorganize over time. Our research focuses on modelling these dynamics, identifying recurring brain states and transitions, and understanding their relationship with neurological events.</p>
                 </div>
                 <div class="card">
-                    <h3>Clinical Translation</h3>
+                    <h3>Brain Networks &amp; Intervention</h3>
                     <div style="text-align:center;">
-                        <img src="clinical.jpg" alt="sparse multiway data"
-                            style="width:140px; height:140px; object-fit:cover; border-radius:12px; margin-bottom:15px;">
+                        <img src="pictures/interventions.png" alt="sparse multiway data"
+                            style="width:240px; max-width:100%; height:150px; object-fit:contain; background:#ffffff; border-radius:12px; margin-bottom:8px;">
                     </div>
-                    <p>Our ambition is to bring AI tools into real-world clinical workflows.</p>
+                    <p>How can brain network models help guide interventions and predict their effects? We explore computational approaches to intervention planning and outcome prediction in brain surgery and neuromodulation.</p>
                 </div>
             </div>
         </section>
@@ -664,6 +694,18 @@
 
         <section id="news">
             <h2>News</h2>
+             <div class="card">
+                <p><strong>18 October 2026</strong></p>
+                <div class="news-item-layout">
+                    <img class="news-item-image" src="pictures/brain_network_control.png" alt="Illustration of brain network control dynamics" style="object-fit: contain; background: #ffffff; height: 180px; object-position: center;">
+                    <div class="news-item-content">
+                        <h3>New CIN grant awarded!</h3>
+                        <p>We are excited to announce that we have received funding from the Center for Integrative Neuroscience (CIN) for our project <em>“Predicting Brain Stimulation Through Network Dynamics.”</em></p>
+                        <p>In this collaborative project with the <a href="https://www.pred-lab.com" target="_blank" rel="noopener">Prediciton and Memory Lab</a> we will combine dynamic causal modelling and network control theory to predict how brain networks respond to interventions, including electrical stimulation and radiofrequency thermocoagulation. The ultimate goal is to improve epilepsy surgery planning and explore new approaches to enhancing memory encoding.</p>
+                        <p>The grant will support a two-year postdoctoral researcher working across the collaborating research groups.</p>
+                    </div>
+                </div>
+            </div>
             <div class="card">
                 <p><strong>25 September 2026</strong></p>
                 <div class="news-item-layout">
